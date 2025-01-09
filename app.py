@@ -10,7 +10,7 @@ from skimage.transform import resize
 
 # 模型載入
 # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-@st.cache(allow_output_mutation=True)
+@st.cache_data(allow_output_mutation=True)
 def load_model():
     return torch.load('./model.pt', map_location=torch.device('cpu')) #.to(device)
 
